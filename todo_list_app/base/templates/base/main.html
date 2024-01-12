@@ -1,0 +1,165 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>To Do List app</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style nonce="{{request.csp_nonce}}">
+			body{
+				background-color:#eee;
+				font-family:'Roboto', sans-serif;
+			}
+			h1,h2,h3,h4,h5,h6{
+				font-family:'Roboto', sans-serif;
+			}
+			a,p{
+				text-decoration:none;
+			}
+			a .logout{
+				color:#fff;
+			}
+			.container{
+				max-width:550px;
+				margin:auto;
+				margin-top:120px;
+				background-color:#fff;
+				-webkit-box-shadow:2px 2px 13px -4px rgba(0,0,0,0.21);
+				box-shadow:10px 10px 13px -4px rgba(0,0,0,0.21);
+				border-radius: 20px;
+			}
+			.register-input{
+				margin-top:10px;
+			}
+			.form-search{
+				margin-top: 20px; 
+				display:flex;
+			}
+			.header-bar{
+				display:flex;
+				justify-content:space-between;
+				color:#fff;
+				border-radius:10px 10px 0 0;
+				padding:10px;
+				background-color:#6d2480;
+				
+			}
+			.header-bar a{
+				color:rgb(247, 247, 247);
+				text-direction:none;
+			}
+			.task-wrapper {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 20px;
+				background-color: #fff;
+				border-radius:10px;
+				border-top: 1px solid rgb(226, 226, 226);
+			}
+			.task-title{
+				display:flex;
+			}
+			.task-title a{
+				text-decoration:none;
+				color:#6d2480;
+				margin-left:10px;
+			}
+			.task-complete-icon{
+				height:20px;
+				width:20px;
+				background-color: #da84b1;
+				border-radius:50%;
+			}
+			.task-incomplete-icon{
+				height:20px;
+				width:20px;
+				background-color:#6d2480;
+				border-radius:50%;
+			}
+			.delete-link{
+				text-decoration:none;
+				font-weight:900;
+				color:#6d2480;
+				font-size:22px;
+				line-height:0;
+			}
+			#search-add-wrapper {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding:10px;
+				
+			}
+			#search-add-wrapper input[type=text]{
+				background-color:fff;
+				border: 1px solid #6d2480;
+				box-shadow:3px 3px 13px -4px rgba(0,0,0,0.21);
+				margin-right:10px;
+			}
+			
+			#add-link {
+				color:#6d2480;
+				text-decoration: none;
+				font-size: 42px;
+				text-shadow: 1px 1px #81413b;
+			}
+			input[type=text],
+			input[type=password],
+			textarea {
+				border: 1px solid #6d2480;
+				border-radius: 5px;
+				padding:10px;
+				width:90%;
+			}
+			label{
+				padding-top:10px !important;
+				display:block;
+			}
+			#search-add-wrapper .button{
+				border:0;
+				background-color: #fff;
+				color: #6d2480;
+				font-weight:bold;
+				padding: 10px;
+				font-size: 14px;
+				border-radius: 5px;
+				cursor:pointer;
+				text-decoration:none;
+				outline:none;
+			}
+			.button{
+				border:0;
+				background-color: #6d2480;
+				color: #fff;
+				font-weight:bold;
+				padding: 10px;
+				font-size: 14px;
+				border-radius: 5px;
+				cursor:pointer;
+				text-decoration:none;
+				<!-- outline:none; -->
+			}
+			.card-body{
+				padding:20px;
+			}
+			.header-status{
+				margin:0;
+				padding-bottom:20px;
+			
+			a .logout{
+				color:#fff;
+				font-weight:bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			{% block content %}
+			{% endblock content %}
+		</div>
+	</body>
+</html>
