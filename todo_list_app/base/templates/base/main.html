@@ -7,8 +7,7 @@
 		<title>To Do List app</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-		<style>
+		<style nonce="{{request.csp_nonce}}">
 			body{
 				background-color:#eee;
 				font-family:'Roboto', sans-serif;
@@ -159,41 +158,8 @@
 
 	<body>
 		<div class="container">
-			<div> 
 			{% block content %}
 			{% endblock content %}
-			
 		</div>
-		<button onclick="shareToFacebook()">Share on Facebook</button>
-		<script>
-		  window.fbAsyncInit = function() {
-			FB.init({
-			  appId            : '927477815435538',
-			  appSecret        : 'f9b55744babfed8638ac94092135ce51',
-			  autoLogAppEvents : true,
-			  xfbml            : true,
-			  version          : 'v13.0'
-			});
-		  };
-		</script>
-		<script>
-        // Function to handle sharing to Facebook
-        function shareToFacebook() {
-            // Open the Facebook share dialog
-            FB.ui({
-                method: 'share',
-                href: 'https://django-render-todo-list-app.onrender.com', // URL f the content to be shared
-                quote: 'Check out this awesome content!', // Optional: quote to accompany the shared content
-            }, function(response){
-                if (response && !response.error_message) {
-                    // Sharing was successful
-                    alert('Shared successfully on Facebook!');
-                } else {
-                    // Sharing failed or was cancelled
-                    alert('Failed to share on Facebook.');
-                }
-            });
-        }
-		</script>
 	</body>
 </html>
